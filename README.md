@@ -6,3 +6,5 @@ autofarm bot for gt
 
 https://user-images.githubusercontent.com/94198465/181242582-7fda80a5-9e6a-4bbd-bf2d-1327c62324e7.mp4
 
+https://user-images.githubusercontent.com/94198465/181243308-416b9037-0302-4c52-9f31-851730880306.mp4
+
