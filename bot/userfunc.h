@@ -136,11 +136,11 @@ void GrowtopiaBot::onLoginRequested()
 	char lmode = '0';
 	if (!login_user && !login_token) { token = ""; } else { token = "\nuser|" + std::to_string(login_user) + "\ntoken|" + std::to_string(login_token) + "\nUUIDToken|" + login_UUIDtoken + "\ndoorID|" + login_doorID; lmode = '1'; }
 	http::Request request{ "http://a104-125-3-135.deploy.static.akamaitechnologies.com/growtopia/server_data.php" };
-    const auto response = request.send("POST", "version=3.95&protocol=162&platform=0", { "Host: www.growtopia1.com" });
+    const auto response = request.send("POST", "version=3.98&protocol=163&platform=0", { "Host: www.growtopia1.com" });
     rtvar var1 = rtvar::parse({ response.body.begin(), response.body.end() });
     // cout << var1.get("meta") << endl;
 	// onShowCaptcha("add_puzzle_captcha|0098/captcha/generated/acba1e90-b738-429c-8c23-5018282fee1f-PuzzleWithMissingPiece.rttex|0098/captcha/generated/acba1e90-b738-429c-8c23-5018282fee1f-TrimmedPuzzlePiece.rttex|ubistatic-a.akamaihd.net|86232|");
-	auto packet = "tankIDName|" + uname + "\ntankIDPass|" + upass + "\nrequestedName|RatTiny\nf|1\nprotocol|162\ngame_version|" + gameVersion + "\nfz|17040192\nlmode|" + lmode + "\ncbits|0\nplayer_age|34\nGDPR|1\ncategory|_-5100hash2|0" + "\nmeta|" + var1.get("meta") + "\nfhash|-716928004\nrid|" + generateRid() + "\nplatformID|0,1,1\ndeviceVersion|0\ncountry|us\nhash|553335509" + "\nmac|" + generateMac() + token + "\nwk|" + generateRid() + "\nzf|-770910015";
+	auto packet = "tankIDName|" + uname + "\ntankIDPass|" + upass + "\nrequestedName|RatTiny\nf|1\nprotocol|163\ngame_version|" + gameVersion + "\nfz|17040192\nlmode|" + lmode + "\ncbits|0\nplayer_age|34\nGDPR|1\ncategory|_-5100hash2|0" + "\nmeta|" + var1.get("meta") + "\nfhash|-716928004\nrid|" + generateRid() + "\nplatformID|0,1,1\ndeviceVersion|0\ncountry|us\nhash|553335509" + "\nmac|" + generateMac() + token + "\nwk|" + generateRid() + "\nzf|-770910015";
 	dbgPrint(packet);
 	SendPacket(2, packet, peer);
 }
